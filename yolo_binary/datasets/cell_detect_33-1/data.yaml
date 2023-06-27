@@ -1,0 +1,13 @@
+names:
+- '0'
+- '1'
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: cell_detect_33
+  url: https://universe.roboflow.com/ocelot/cell_detect_33/dataset/1
+  version: 1
+  workspace: ocelot
+test: ../test/images
+train: cell_detect_33-1/train/images
+val: cell_detect_33-1/valid/images
