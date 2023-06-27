@@ -4,7 +4,6 @@
  
 In this repository, you can find the source code for the [Grand Challenge OCELOT 23](https://ocelot2023.grand-challenge.org/) **algorithm container**. We highly recommend using this repository as template for your algorithm submissions. The main purpose of your algorithm submission is to run only inference on the validation and test cell and tissue images already living in the GC platform. For more information about our work refer to our [page](https://lunit-io.github.io/research/publications/ocelot/).
 
- 
 # Input and output
  
 We already implemented for you the input/output interface for loading the input images stored in the platform and writing the cell predictions. Here the relevant code:
@@ -94,6 +93,9 @@ def process_patch_pair(cell_patch, tissue_patch, pair_id, meta_dataset):
     return list(zip(xs, ys, class_id, probs))
 
 ```
+
+To guide participants with a real-world example, we provide a simple baseline algorithm that uses the U-Net architecture. For more details, please visit `ocelot23algo/user/unet_example/`.
+
 # Submitting to GC
 
 To submit your algorithm to the GC platform, you'll need to export the docker container with all the required ingredients to run your inference. We have three simple bash scripts that might be helpful for you.
@@ -126,14 +128,12 @@ bash export.sh
 
 Cite our work!
 ```
-@misc{ryu2023ocelot,
-      title={OCELOT: Overlapped Cell on Tissue Dataset for Histopathology}, 
-      author={Jeongun Ryu and Aaron Valero Puche and JaeWoong Shin and Seonwook Park and Biagio Brattoli and Jinhee Lee and Wonkyung Jung and Soo Ick Cho and Kyunghyun Paeng and Chan-Young Ock and Donggeun Yoo and Sérgio Pereira},
-      year={2023},
-      eprint={2303.13110},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
+@InProceedings{Ryu_2023_CVPR,
+    author = {Ryu, Jeongun and Puche, Aaron Valero and Shin, JaeWoong and Park, Seonwook and Brattoli, Biagio and Lee, Jinhee and Jung, Wonkyung and Cho, Soo Ick and Paeng, Kyunghyun and Ock, Chan-Young and Yoo, Donggeun and Pereira, S\'ergio},
+    title = {OCELOT: Overlapped Cell on Tissue Dataset for Histopathology},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month = {June},
+    year = {2023},
+    pages = {23902-23912}
 }
 ```
-
-**NOTE**: We will update the citation when CVPR publicly release the proceedings!
